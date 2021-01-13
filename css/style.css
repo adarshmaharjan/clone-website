@@ -81,8 +81,167 @@ button{
     margin-top: -35px;
     margin-left: -35px;
 }
-  
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height:100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    background-color: #fff;
+    border-radius: 8px;
+}
+#lang-modal{
+    height:80%;
+    width: 50%;
+}
+.modal-contents{
+    position: relative;
+    overflow: hidden;
+}
+#lang-modal-logo{
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    /* height: 30px; */
+}
+.close-modal{
+    font-size: 32px;
+    font-weight: bold;
+}
+#close-lang-modal{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
 
+.close-modal:hover,
+.close-modal:active{
+    cursor: pointer;
+}
+
+#lang-modal-details{
+    padding: 75px 28px 0 28px;
+
+}
+#lang-modal-details h2{
+    font-size: 20px;
+    font-weight: 800;
+}
+#lang-modal-details ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+#lang-modal-details ul li{
+    width: 25%;
+    margin: 8px 0;
+    border-radius: 8px;
+
+}
+#lang-modal-details ul li:hover,
+#lang-modal-details ul li:hover{
+    background-color: #e8e8e8;
+    cursor: pointer;
+    
+
+}
+#lang-modal-details ul li span{
+    color: #5c5c5c;
+    padding: 8px;
+}
+#top-lang{
+    font-size: 16px;
+    font-weight: 400;
+    
+}
+
+#bot-lang{
+    font-size: 12px;
+    font-weight: 400;
+}
+/*****form-modals******/
+#form-modal{
+    /* display: block; */
+    height: 95%;
+    width: 33%;
+}
+#close-form-modal{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+#form-modal-logo{
+    position: absolute;
+    top:16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+}
+#form-modal-details{
+    text-align: center;
+    padding: 90px 45px 0 45px;
+}
+#form-modal-details h2{
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 800;
+    font-style: italic;
+
+}
+#form-modal-details p{
+    font-size: 14px;
+    color: #2c2c2c;
+
+}
+#form-modal-details p a{
+    color: #000;
+    text-decoration: underline;
+}
+.btn-container{
+    margin: 16px 0;
+}
+.btn-container button{
+    padding: 16px;
+    width: 350px;
+    max-width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: none;
+    font-weight: 600;
+    border: 2px solid #2c2c2c;
+    background: #fff;
+    color: #2c2c2c;
+    border-radius: 100px; 
+}
+#troubleshoot{
+    text-decoration: underline;
+    color: #5c5c5c;
+}
+#form-modal-app{
+    margin-top: 16px;
+}
+#form-app-buttons{
+    margin-top: 16px;
+}
+#form-app-buttons img{
+    width: 32px;
+    margin: 0 16px;
+    max-width: 100%;
+}
 /*********navigation**********/
 header{
     
@@ -109,30 +268,31 @@ nav{
 .spacer{
     flex: 1;
 }
-#language-btn{
+#lang-btn{
     background: none;
     color: #fff;
     border: none;
 
 }
 
-#language-btn{
+#lang-btn{
     color: #fff;
     font-family: inherit;
     padding: 0 12px;
     transition: all 0.45s ease-in-out;
 
 }
-#language-btn span{
+#lang-btn span{
     font-size: 16px;
 
 }
-#language-btn:hover,
-#language-btn:active{
+#lang-btn:hover,
+#lang-btn:active{
     color: #fd5068;
+    cursor: pointer;
 
 }
-#language-btn i{
+#lang-btn i{
     margin-right: 8px;
 }
 #log-in-btn{
@@ -152,6 +312,7 @@ nav{
 #log-in-btn:active{
     color: #fff;
     background: linear-gradient(262deg, #ff7854, #fd267d);
+    cursor: pointer;
     
 }
 #banner{
@@ -186,6 +347,10 @@ nav{
     width: 100%;
     height: 100%;
     display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 #banner-content-inner{
     display: table-cell;
@@ -194,7 +359,7 @@ nav{
 }
 
 #banner-content-inner h1{
-    font-size: 120px;
+    font-size: 8vw;
     font-weight: 800;
     line-height: 1.18;
     color: #fff;
@@ -320,7 +485,7 @@ footer{
 #get-app a{
     padding: 0 24px;
     margin-left: 16px;
-    border: 1px solid #e0e4e9;
+    /* border: 1px solid #e0e4e9; */
     border-radius: 100px;
     margin-left: 16px;
     /* width: 50px; */
@@ -354,6 +519,10 @@ footer{
 #extras a{
     font-size: 14px;
     color: #5c5c5c;
+}
+#extras a:hover,
+#extras a:active{
+    color: #fd5068;
 }
 .divider{
     display: inline-block;
